@@ -48,3 +48,15 @@ Install cargo and run the following command :
 ```bash
 cargo run
 ```
+
+## Ideas for improvement
+- Make `GildedRose` support both Item and ItemV2 at the same time. This can be done in several ways:
+	- Using dynamic dispatch
+	- Using reflection (not implemented in rust, we would need to implement it ourselves using a derive macro or use reflection crate)
+	- We could also use a enum
+		```rs
+		enum ItemType {
+			V1(Item),
+			V2(ItemV2),
+		}
+		```

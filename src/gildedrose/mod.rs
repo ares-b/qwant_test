@@ -4,6 +4,14 @@ mod item;
 #[allow(unused_imports)]
 pub use item::{GenericItem, Item, ItemV2};
 
+// We could use dynamic dispatch to work with both Item and ItemV2 at the same time
+// We could also use reflection (not implemented in rust, we would need to implement it ourselves using a derive macro or use reflection crate)
+// We could also use a enum
+// enum ItemType {
+//     V1(Item),
+//     V2(ItemV2),
+// }
+
 pub struct GildedRose<T: GenericItem> {
     pub items: Vec<T>,
 }
